@@ -189,4 +189,22 @@ diabetic_adults %>%
     )
   print (summary_table, width = Inf)
   
+  #Prepare variables for logistic regression
+  diabetic_adults <- diabetic_adults %>%
+    mutate(
+      female = ifelse(as.numeric(RIAGENDR) == 2,1,0),
+      on_insulin = ifelse(as.numeric(DIQ050) == 1,1,0),
+      race = as.factor (RIDRETH1)
+    )
+  #Run logistic regression
+  glp1_model <- glm(glp1_user ~ RIDAGEYR + female + race + on_insulin + INDFMPIR, 
+                    data = diabetic_adults,
+                    family = binomial)
+  #View results
+  summary(glp1_model)
+  
+  #Convert to odds rations
+  exp(cbind(OR = coef(glp1_model),
+            confint(glp1_model)))
+  
   
