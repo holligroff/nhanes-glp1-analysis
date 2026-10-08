@@ -16,7 +16,10 @@ associated with GLP-1 adoption?
 - GLP-1 users were younger (mean age 57.7 vs 63.8 years)
 - GLP-1 users were more likely to be on insulin (57.9% vs 26.8%)
 - Non-Hispanic Black adults had the highest GLP-1 adoption rate (4.0%)
-
+- After multivariable adjustment, insulin use (OR 4.31, 95% CI 1.64-12.09) 
+  and younger age (OR 0.96 per year) were independently associated with GLP-1 use
+- Sex, race/ethnicity, and income were not significant predictors
+- 
 ## Repository Contents
 - `GLP_analysis.R` — complete R analysis script
 - `age_distribution_glp1.png` — age distribution by GLP-1 status
